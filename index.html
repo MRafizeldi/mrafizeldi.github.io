@@ -21,7 +21,6 @@
 head.ready(document, function() {
     // push a function to the end of the page for later execution
     // runs as soon as the document is ready
-              head.load('http://mrafizeldi.github.io/stylesheets/style.min.css');
 });
 </script>
     <style>
@@ -92,6 +91,14 @@ $ git checkout gh-pages
       </footer>
     </div>
 
+
+        <!-- injected via a module or an include -->
+        <script type="text/javascript">
+            head.ready(document, function () {
+                head.load('http://mrafizeldi.github.io/stylesheets/style.min.css');
+            });
+        </script>
+        
               <script type="text/javascript">
 
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
