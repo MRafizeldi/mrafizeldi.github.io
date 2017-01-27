@@ -41,8 +41,8 @@ if(BLOG_ADSENSE == false) {
           }
           $('#adssidebar-left').append($adsLeftObj);
         } else if($adsLeftObj.hasClass('adsbygoogle') && $(document).width() > 767 && $(document).width() < 1200) {          
-          //$('#sidebar-right-1').prepend('<div class="in-sidebar in-leftside" id="adssidebar-right"></div>');
-          //$('#adssidebar-right').append($adsLeftObj);
+          $('#sidebar-right-1').prepend('<div class="in-sidebar in-leftside" id="adssidebar-right"></div>');
+          $('#adssidebar-right').append($adsLeftObj);
         }
         $('.mobile.pg-item #blog-pager').after($adsLeftObj);
       }
