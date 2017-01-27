@@ -4,6 +4,7 @@ if(BLOG_ADSENSE == false) {
 }
     if(BLOG_ADSENSE == true) {
       var iTextAdsCount = 0;
+      var brAdsCount = $('.post-body br').length;
       $('.is-item .post-body i').each(function (i,val) {
         var iText = $(this).text();
         $(this).attr('data-itextid',i);
@@ -20,6 +21,17 @@ if(BLOG_ADSENSE == false) {
         }
       });
 
+        
+$('.post-body br').each(function (i,val) {
+    $(this).attr('id','br-'+i);
+    if(brAdsCount > 6 && i == brAdsCount / 2 && adsPBodyCenter !== '') {        
+        var parsedHtml = $(adsPBodyCenter);
+        var $adsPostCenterObj = $($.parseHTML(adsPBodyCenter));
+        console.log('br ke ', i);
+        $(this).after('<div class="d-block" style="background:#eee;display:block;">' + $adsPostCenterObj + '</div>');
+    }
+})
+        
       if($('#adscolumn-top').length && adsTopColumnTop !== '') {
         var $adsTopColObj = $($.parseHTML(adsTopColumnTop));
         $('#adscolumn-top').append($adsTopColObj);
